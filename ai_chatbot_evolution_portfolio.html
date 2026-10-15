@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Chatbot Evolution Portfolio | Developer Showcase</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        darkbg: '#0b0f19',
+                        cardbg: '#111827',
+                        accent: '#6366f1',
+                        accenthover: '#4f46e5'
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        code, pre { font-family: 'Fira Code', monospace; }
+        .glow-effect {
+            box-shadow: 0 0 40px -10px rgba(99, 102, 241, 0.25);
+        }
+    </style>
+</head>
+<body class="bg-darkbg text-gray-100 min-h-screen flex flex-col selection:bg-indigo-500 selection:text-white">
+
+    <!-- Header / Navbar -->
+    <header class="border-b border-gray-800 bg-darkbg/80 backdrop-blur-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-indigo-500 to-purple-600 flex items-center justify-center shadow-lg shadow-indigo-500/30">
+                    <i class="fa-solid fa-robot text-white text-lg"></i>
+                </div>
+                <div>
+                    <span class="font-bold text-lg tracking-tight bg-gradient-to-r from-white via-gray-200 to-indigo-400 bg-clip-text text-transparent">AI Project Portfolio</span>
+                    <span class="block text-xs text-indigo-400 font-medium">Built by Python & LLM Developer</span>
+                </div>
+            </div>
+            <nav class="hidden md:flex items-center space-x-6 text-sm font-medium text-gray-400">
+                <a href="#hero" class="hover:text-indigo-400 transition">Overview</a>
+                <a href="#evolution" class="hover:text-indigo-400 transition">Evolution Stages</a>
+                <a href="#simulator" class="hover:text-indigo-400 transition">Live Simulator</a>
+                <a href="#skills" class="hover:text-indigo-400 transition">Key Learnings</a>
+            </nav>
+            <div>
+                <a href="#simulator" class="bg-indigo-600 hover:bg-indigo-500 text-white px-4 py-2 rounded-xl text-sm font-semibold transition shadow-md shadow-indigo-600/20 flex items-center space-x-2">
+                    <i class="fa-solid fa-play text-xs"></i>
+                    <span>Test Live Demo</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero" class="relative overflow-hidden pt-16 pb-20 lg:pt-24 lg:pb-32">
+        <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-indigo-900/20 via-transparent to-transparent pointer-events-none"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center max-w-3xl mx-auto">
+                <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 text-xs font-semibold mb-6">
+                    <i class="fa-solid fa-code"></i>
+                    <span>Python API Integration & LLM Architecture</span>
+                </div>
+                <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight text-white mb-6 leading-tight">
+                    From Static Script to <span class="bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">Multi-Persona AI Assistant</span>
+                </h1>
+                <p class="text-lg sm:text-xl text-gray-300 mb-10 leading-relaxed">
+                    Explore how I engineered a production-ready conversational AI pipeline in Python—iterating from basic API calls to stateful memory management and dynamic system persona routing.
+                </p>
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                    <a href="#evolution" class="w-full sm:w-auto px-8 py-3.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-semibold transition shadow-lg shadow-indigo-600/30 flex items-center justify-center space-x-2">
+                        <span>Explore 4 Stages</span>
+                        <i class="fa-solid fa-arrow-down text-xs"></i>
+                    </a>
+                    <a href="#simulator" class="w-full sm:w-auto px-8 py-3.5 rounded-xl bg-gray-800 hover:bg-gray-700 text-gray-200 font-semibold transition border border-gray-700 flex items-center justify-center space-x-2">
+                        <span>Try Interactive Chatbot</span>
+                        <i class="fa-solid fa-terminal text-xs text-indigo-400"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Stats Bar -->
+            <div class="mt-16 grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
+                <div class="bg-cardbg border border-gray-800/80 rounded-2xl p-5 text-center">
+                    <div class="text-2xl font-bold text-indigo-400">4 Stages</div>
+                    <div class="text-xs text-gray-400 mt-1">Iterative Architecture</div>
+                </div>
+                <div class="bg-cardbg border border-gray-800/80 rounded-2xl p-5 text-center">
+                    <div class="text-2xl font-bold text-indigo-400">OpenAI API</div>
+                    <div class="text-xs text-gray-400 mt-1">Client SDK & Dotenv</div>
+                </div>
+                <div class="bg-cardbg border border-gray-800/80 rounded-2xl p-5 text-center">
+                    <div class="text-2xl font-bold text-indigo-400">Stateful</div>
+                    <div class="text-xs text-gray-400 mt-1">Conversation History</div>
+                </div>
+                <div class="bg-cardbg border border-gray-800/80 rounded-2xl p-5 text-center">
+                    <div class="text-2xl font-bold text-indigo-400">5 Personas</div>
+                    <div class="text-xs text-gray-400 mt-1">System Prompt Routing</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Evolution Stages Section -->
+    <section id="evolution" class="py-20 bg-gray-950/50 border-t border-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <h2 class="text-3xl font-bold text-white mb-4">Project Evolution Timeline</h2>
+                <p class="text-gray-400">Click through each phase of development to inspect the source code, key concepts, and engineering milestones.</p>
+            </div>
+
+            <!-- Tabs Navigation -->
+            <div class="flex flex-wrap justify-center gap-2 mb-10">
+                <button onclick="switchTab(1)" id="tab-btn-1" class="px-5 py-3 rounded-xl font-semibold text-sm transition bg-indigo-600 text-white shadow-lg shadow-indigo-600/30 flex items-center space-x-2">
+                    <span class="w-6 h-6 rounded-full bg-white/20 flex items-center justify-center text-xs">1</span>
+                    <span>Simple One-Shot API</span>
+                </button>
+                <button onclick="switchTab(2)" id="tab-btn-2" class="px-5 py-3 rounded-xl font-semibold text-sm transition bg-cardbg text-gray-400 hover:bg-gray-800 hover:text-white border border-gray-800 flex items-center space-x-2">
+                    <span class="w-6 h-6 rounded-full bg-gray-800 flex items-center justify-center text-xs">2</span>
+                    <span>Interactive CLI Loop</span>
+                </button>
+                <button onclick="switchTab(3)" id="tab-btn-3" class="px-5 py-3 rounded-xl font-semibold text-sm transition bg-cardbg text-gray-400 hover:bg-gray-800 hover:text-white border border-gray-800 flex items-center space-x-2">
+                    <span class="w-6 h-6 rounded-full bg-gray-800 flex items-center justify-center text-xs">3</span>
+                    <span>Conversational Memory</span>
+                </button>
+                <button onclick="switchTab(4)" id="tab-btn-4" class="px-5 py-3 rounded-xl font-semibold text-sm transition bg-cardbg text-gray-400 hover:bg-gray-800 hover:text-white border border-gray-800 flex items-center space-x-2">
+                    <span class="w-6 h-6 rounded-full bg-gray-800 flex items-center justify-center text-xs">4</span>
+                    <span>Persona-Based Assistant</span>
+                </button>
+            </div>
+
+            <!-- Tab Content Container -->
+            <div class="max-w-5xl mx-auto bg-cardbg border border-gray-800 rounded-3xl overflow-hidden glow-effect">
+                
+                <!-- STAGE 1 -->
+                <div id="tab-content-1" class="tab-content grid grid-cols-1 lg:grid-cols-12">
+                    <div class="lg:col-span-5 p-8 flex flex-col justify-between border-b lg:border-b-0 lg:border-r border-gray-800">
+                        <div>
+                            <div class="inline-block px-3 py-1 rounded-full bg-indigo-500/10 text-indigo-400 text-xs font-semibold mb-4">Stage 1 of 4</div>
+                            <h3 class="text-2xl font-bold text-white mb-3">Simple One-Shot API Script</h3>
+                            <p class="text-gray-300 text-sm leading-relaxed mb-6">
+                                The foundation of the project. This script establishes secure environment configuration via `python-dotenv`, initializes the OpenAI client with custom base URLs (compatible with Ollama or local LLMs), and sends a single static prompt asking "what is AI?".
+                            </p>
+                            <div class="space-y-3 mb-6">
+                                <div class="flex items-center space-x-3 text-sm text-gray-300">
+                                    <i class="fa-solid fa-check text-indigo-400"></i>
+                                    <span>Environment variables (`.env`) loading</span>
+                                </div>
+                                <div class="flex items-center space-x-3 text-sm text-gray-300">
+                                    <i class="fa-solid fa-check text-indigo-400"></i>
+                                    <span>Custom endpoint configuration</span>
+                                </div>
+                                <div class="flex items-center space-x-3 text-sm text-gray-300">
+                                    <i class="fa-solid fa-check text-indigo-400"></i>
+                                    <span>Direct Chat Completions API call</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-gray-900/80 p-4 rounded-xl border border-gray-800">
+                            <div class="text-xs text-gray-400 uppercase tracking-wider font-semibold mb-1">Key Takeaway</div>
+                            <div class="text-sm text-gray-200">Demonstrates secure API key handling and basic SDK integration without hardcoding secrets.</div>
+                        </div>
+                    </div>
+                    <div class="lg:col-span-7 bg-[#0d1117] p-6 relative flex flex-col">
+                        <div class="flex items-center justify-between pb-4 mb-3 border-b border-gray-800 text-xs text-gray-400">
+                            <span class="flex items-center space-x-2">
+                                <i class="fa-brands fa-python text-yellow-500"></i>
+                                <span>stage_1_basic.py</span>
+                            </span>
+                            <button onclick="copyCode('code-1')" class="hover:text-white transition flex items-center space-x-1 bg-gray-800/80 px-2.5 py-1 rounded-lg">
+                                <i class="fa-regular fa-copy"></i>
+                                <span>Copy</span>
+                            </button>
+                        </div>
+                        <pre id="code-1" class="text-xs text-gray-300 overflow-x-auto p-2 leading-relaxed"><code>from openai import OpenAI
+from dotenv import load_dotenv
+import os
+
+# load the configuration from the .env file
+load_dotenv()
+
+# create a client that communicates with ollama/openai
+client = OpenAI(
+    base_url=os.getenv("base_url"),
+    api_key=os.getenv("api_key")
+)
+
+# send a question to the ai model
+response = client.chat.completions.create(
+    model=os.getenv("model"),
+    messages=[
+        {
+            "role": "user",
+            "content": "what is AI?"
+        }
+    ]
+)
+
+print(response.choices[0].message.content)</code></pre>
+                    </div>
+                </div>
+
+                <!-- STAGE 2 -->
+                <div id="tab-content-2" class="tab-content hidden grid grid-cols-1 lg:grid-cols-12">
+                    <div class="lg:col-span-5 p-8 flex flex-col justify-between border-b lg:border-b-0 lg:border-r border-gray-800">
+                        <div>
+                            <div class="inline-block px-3 py-1 rounded-full bg-indigo-500/10 text-indigo-400 text-xs font-semibold mb-4">Stage 2 of 4</div>
+                            <h3 class="text-2xl font-bold text-white mb-3">Interactive CLI Loop</h3>
+                            <p class="text-gray-300 text-sm leading-relaxed mb-6">
+                                Upgraded from a single hardcoded question to a continuous interactive loop using `while True` and Python's `input()` function. Users can chat in real time and type "exit" to safely terminate the session.
+                            </p>
+                            <div class="space-y-3 mb-6">
+                                <div class="flex items-center space-x-3 text-sm text-gray-300">
+                                    <i class="fa-solid fa-check text-indigo-400"></i>
+                                    <span>Continuous execution loop (`while True`)</span>
+                                </div>
+                                <div class="flex items-center space-x-3 text-sm text-gray-300">
+                                    <i class="fa-solid fa-check text-indigo-400"></i>
+                                    <span>Dynamic user prompt input</span>
+                                </div>
+                                <div class="flex items-center space-x-3 text-sm text-gray-300">
+                                    <i class="fa-solid fa-check text-indigo-400"></i>
+                                    <span>Graceful exit condition handling</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-gray-900/80 p-4 rounded-xl border border-gray-800">
+                            <div class="text-xs text-gray-400 uppercase tracking-wider font-semibold mb-1">Key Takeaway</div>
+                            <div class="text-sm text-gray-200">Transforms a static script into an interactive command-line application.</div>
+                        </div>
+                    </div>
+                    <div class="lg:col-span-7 bg-[#0d1117] p-6 relative flex flex-col">
+                        <div class="flex items-center justify-between pb-4 mb-3 border-b border-gray-800 text-xs text-gray-400">
+                            <span class="flex items-center space-x-2">
+                                <i class="fa-brands fa-python text-yellow-500"></i>
+                                <span>stage_2_input_loop.py</span>
+                            </span>
+                            <button onclick="copyCode('code-2')" class="hover:text-white transition flex items-center space-x-1 bg-gray-800/80 px-2.5 py-1 rounded-lg">
+                                <i class="fa-regular fa-copy"></i>
+                                <span>Copy</span>
+                            </button>
+                        </div>
+                        <pre id="code-2" class="text-xs text-gray-300 overflow-x-auto p-2 leading-relaxed"><code>from openai import OpenAI
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
+
+while True:
+    user_input = input("ASK A QUESTION TO ANSWER: ")
+    if user_input.lower() == "exit":
+        print("byeeee... come again later take a break")
+        break
+
+    client = OpenAI(
+        base_url=os.getenv("base_url"),
+        api_key=os.getenv("api_key")
+    )
+
+    response = client.chat.completions.create(
+        model=os.getenv("model"),
+        messages=[
+            {
+                "role": "user",
+                "content": user_input
+            }
+        ]
+    )
+    print(response.choices[0].message.content)</code></pre>
+                    </div>
+                </div>
+
+                <!-- STAGE 3 -->
+                <div id="tab-content-3" class="tab-content hidden grid grid-cols-1 lg:grid-cols-12">
+                    <div class="lg:col-span-5 p-8 flex flex-col justify-between border-b lg:border-b-0 lg:border-r border-gray-800">
+                        <div>
+                            <div class="inline-block px-3 py-1 rounded-full bg-indigo-500/10 text-indigo-400 text-xs font-semibold mb-4">Stage 3 of 4</div>
+                            <h3 class="text-2xl font-bold text-white mb-3">Conversational Memory</h3>
+                            <p class="text-gray-300 text-sm leading-relaxed mb-6">
+                                In Stage 2, every question forgot the previous context. Stage 3 introduces a `messages` array acting as conversation memory. Both user prompts and assistant replies are appended, enabling multi-turn context awareness.
+                            </p>
+                            <div class="space-y-3 mb-6">
+                                <div class="flex items-center space-x-3 text-sm text-gray-300">
+                                    <i class="fa-solid fa-check text-indigo-400"></i>
+                                    <span>Array-based state history tracking</span>
+                                </div>
+                                <div class="flex items-center space-x-3 text-sm text-gray-300">
+                                    <i class="fa-solid fa-check text-indigo-400"></i>
+                                    <span>Appending assistant responses to maintain context</span>
+                                </div>
+                                <div class="flex items-center space-x-3 text-sm text-gray-300">
+                                    <i class="fa-solid fa-check text-indigo-400"></i>
+                                    <span>Multi-turn conversational capability</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-gray-900/80 p-4 rounded-xl border border-gray-800">
+                            <div class="text-xs text-gray-400 uppercase tracking-wider font-semibold mb-1">Key Takeaway</div>
+                            <div class="text-sm text-gray-200">Solves stateless API limitations by maintaining full chat history across loop iterations.</div>
+                        </div>
+                    </div>
+                    <div class="lg:col-span-7 bg-[#0d1117] p-6 relative flex flex-col">
+                        <div class="flex items-center justify-between pb-4 mb-3 border-b border-gray-800 text-xs text-gray-400">
+                            <span class="flex items-center space-x-2">
+                                <i class="fa-brands fa-python text-yellow-500"></i>
+                                <span>stage_3_memory.py</span>
+                            </span>
+                            <button onclick="copyCode('code-3')" class="hover:text-white transition flex items-center space-x-1 bg-gray-800/80 px-2.5 py-1 rounded-lg">
+                                <i class="fa-regular fa-copy"></i>
+                                <span>Copy</span>
+                            </button>
+                        </div>
+                        <pre id="code-3" class="text-xs text-gray-300 overflow-x-auto p-2 leading-relaxed"><code>from openai import OpenAI
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
+
+client = OpenAI(
+    base_url=os.getenv("base_url"),
+    api_key=os.getenv("api_key")
+)
+
+print("=" * 40)
+print("       My AI Assistant")
+print("=" * 40)
+
+messages = []
+while True:
+    user_input = input("\nYou : ")
+    messages.append({"role": "user", "content": user_input})
+
+    if user_input.lower() == "quit":
+        print("\nAI  : Goodbye! Have a great day.")
+        break
+
+    response = client.chat.completions.create(
+        model=os.getenv("model"),
+        messages=messages
+    )
+
+    ai_reply = response.choices[0].message.content
+    print("\nAI :", ai_reply)
+    
+    messages.append({"role": "assistant", "content": ai_reply})</code></pre>
+                    </div>
+                </div>
+
+                <!-- STAGE 4 -->
+                <div id="tab-content-4" class="tab-content hidden grid grid-cols-1 lg:grid-cols-12">
+                    <div class="lg:col-span-5 p-8 flex flex-col justify-between border-b lg:border-b-0 lg:border-r border-gray-800">
+                        <div>
+                            <div class="inline-block px-3 py-1 rounded-full bg-indigo-500/10 text-indigo-400 text-xs font-semibold mb-4">Stage 4 of 4</div>
+                            <h3 class="text-2xl font-bold text-white mb-3">Persona-Based AI Assistant</h3>
+                            <p class="text-gray-300 text-sm leading-relaxed mb-6">
+                                The ultimate iteration. Introduces a dynamic role dictionary (`roles` dict) allowing users to pick a specialized AI persona (Teacher, Python Expert, Travel Guide, Motivational Coach, Interviewer) which initializes the message stack with a custom `system` prompt.
+                            </p>
+                            <div class="space-y-3 mb-6">
+                                <div class="flex items-center space-x-3 text-sm text-gray-300">
+                                    <i class="fa-solid fa-check text-indigo-400"></i>
+                                    <span>System role prompt injection</span>
+                                </div>
+                                <div class="flex items-center space-x-3 text-sm text-gray-300">
+                                    <i class="fa-solid fa-check text-indigo-400"></i>
+                                    <span>Dictionary-based persona routing</span>
+                                </div>
+                                <div class="flex items-center space-x-3 text-sm text-gray-300">
+                                    <i class="fa-solid fa-check text-indigo-400"></i>
+                                    <span>Customizable expert behavior</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-gray-900/80 p-4 rounded-xl border border-gray-800">
+                            <div class="text-xs text-gray-400 uppercase tracking-wider font-semibold mb-1">Key Takeaway</div>
+                            <div class="text-sm text-gray-200">Demonstrates advanced LLM control through system instructions and modular dict lookup.</div>
+                        </div>
+                    </div>
+                    <div class="lg:col-span-7 bg-[#0d1117] p-6 relative flex flex-col">
+                        <div class="flex items-center justify-between pb-4 mb-3 border-b border-gray-800 text-xs text-gray-400">
+                            <span class="flex items-center space-x-2">
+                                <i class="fa-brands fa-python text-yellow-500"></i>
+                                <span>stage_4_personas.py</span>
+                            </span>
+                            <button onclick="copyCode('code-4')" class="hover:text-white transition flex items-center space-x-1 bg-gray-800/80 px-2.5 py-1 rounded-lg">
+                                <i class="fa-regular fa-copy"></i>
+                                <span>Copy</span>
+                            </button>
+                        </div>
+                        <pre id="code-4" class="text-xs text-gray-300 overflow-x-auto p-2 leading-relaxed"><code>from openai import OpenAI
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
+client = OpenAI(base_url=os.getenv("BASE_URL"), api_key=os.getenv("API_KEY"))
+
+roles = {
+    "1": "You are a friendly school teacher. Explain concepts simply with real-life examples.",
+    "2": "You are a senior Python developer. Explain clearly with code examples.",
+    "3": "You are an experienced travel guide. Recommend places, food, and tips.",
+    "4": "You are a motivational coach. Encourage the user positively.",
+    "5": "You are a professional interviewer. Ask one question at a time."
+}
+
+print("Choose Assistant:\n1. Teacher\n2. Python Expert\n3. Travel Guide\n4. Coach\n5. Interviewer")
+choice = input("\nEnter choice: ")
+
+messages = [{"role": "system", "content": roles.get(choice, "You are helpful.")}]
+
+while True:
+    user_input = input("\nYou : ")
+    if user_input.lower() == "quit": break
+    messages.append({"role": "user", "content": user_input})
+    
+    res = client.chat.completions.create(model=os.getenv("MODEL"), messages=messages)
+    reply = res.choices[0].message.content
+    print("\nAI :", reply)
+    messages.append({"role": "assistant", "content": reply})</code></pre>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Live Simulator Section -->
+    <section id="simulator" class="py-20 bg-darkbg border-t border-gray-900">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-semibold mb-4">
+                    <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                    <span>Interactive Web Simulation (Stage 4 Logic)</span>
+                </div>
+                <h2 class="text-3xl font-bold text-white mb-3">Live Persona Chatbot Simulator</h2>
+                <p class="text-gray-400 text-sm">Test out the multi-persona logic right in your browser before hiring!</p>
+            </div>
+
+            <!-- Simulator Card -->
+            <div class="bg-cardbg border border-gray-800 rounded-3xl overflow-hidden shadow-2xl flex flex-col h-[550px]">
+                
+                <!-- Simulator Header -->
+                <div class="bg-gray-900/90 border-b border-gray-800 p-4 flex flex-col sm:flex-row items-center justify-between gap-4">
+                    <div class="flex items-center space-x-3">
+                        <div id="persona-icon" class="w-10 h-10 rounded-xl bg-indigo-600/20 text-indigo-400 flex items-center justify-center font-bold">
+                            <i class="fa-solid fa-graduation-cap"></i>
+                        </div>
+                        <div>
+                            <div class="text-sm font-bold text-white" id="active-persona-title">School Teacher</div>
+                            <div class="text-xs text-gray-400" id="active-persona-desc">Explains concepts simply with real-life examples.</div>
+                        </div>
+                    </div>
+                    <!-- Persona Selector Dropdown -->
+                    <div class="flex items-center space-x-2 w-full sm:w-auto">
+                        <label class="text-xs text-gray-400 font-medium whitespace-nowrap">Switch Persona:</label>
+                        <select id="persona-select" onchange="changePersona(this.value)" class="bg-gray-800 border border-gray-700 text-gray-200 text-xs rounded-xl px-3 py-2 focus:outline-none focus:border-indigo-500">
+                            <option value="teacher">1. School Teacher</option>
+                            <option value="python">2. Python Expert</option>
+                            <option value="travel">3. Travel Guide</option>
+                            <option value="coach">4. Motivational Coach</option>
+                            <option value="interviewer">5. Interviewer</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Chat Messages Area -->
+                <div id="chat-messages" class="flex-1 p-6 overflow-y-auto space-y-4">
+                    <div class="flex items-start space-x-3">
+                        <div class="w-8 h-8 rounded-full bg-indigo-600/20 text-indigo-400 flex items-center justify-center text-xs font-bold shrink-0">AI</div>
+                        <div class="bg-gray-800/80 border border-gray-700/60 rounded-2xl p-4 text-sm text-gray-200 max-w-[80%] leading-relaxed">
+                            Hello! I am your <strong>School Teacher</strong> assistant. Ask me any question, and I'll explain it using simple language and everyday examples!
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Chat Input Bar -->
+                <div class="p-4 bg-gray-900/90 border-t border-gray-800">
+                    <form onsubmit="handleUserSubmit(event)" class="flex items-center space-x-3">
+                        <input type="text" id="user-input-box" placeholder="Type a message or question..." class="flex-1 bg-gray-800 border border-gray-700 rounded-xl px-4 py-3 text-sm text-gray-100 placeholder-gray-500 focus:outline-none focus:border-indigo-500">
+                        <button type="submit" class="bg-indigo-600 hover:bg-indigo-500 text-white px-5 py-3 rounded-xl text-sm font-semibold transition flex items-center space-x-2 shadow-lg shadow-indigo-600/20">
+                            <span>Send</span>
+                            <i class="fa-solid fa-paper-plane text-xs"></i>
+                        </button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Learnings & Skills Section -->
+    <section id="skills" class="py-20 bg-gray-950/50 border-t border-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <h2 class="text-3xl font-bold text-white mb-4">Technical Skills Demonstrated</h2>
+                <p class="text-gray-400">Core competencies highlighted through this multi-stage project progression.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-cardbg border border-gray-800 rounded-2xl p-6">
+                    <div class="w-12 h-12 rounded-xl bg-indigo-600/10 text-indigo-400 flex items-center justify-center text-xl font-bold mb-4">
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">Secure API Configuration</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Utilized `python-dotenv` to securely manage API keys and base URLs, ensuring sensitive secrets are never hardcoded into source control.
+                    </p>
+                </div>
+
+                <div class="bg-cardbg border border-gray-800 rounded-2xl p-6">
+                    <div class="w-12 h-12 rounded-xl bg-indigo-600/10 text-indigo-400 flex items-center justify-center text-xl font-bold mb-4">
+                        <i class="fa-solid fa-database"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">Stateful Memory Management</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Managed conversation history arrays (`messages` list) to preserve multi-turn context between users and language models.
+                    </p>
+                </div>
+
+                <div class="bg-cardbg border border-gray-800 rounded-2xl p-6">
+                    <div class="w-12 h-12 rounded-xl bg-indigo-600/10 text-indigo-400 flex items-center justify-center text-xl font-bold mb-4">
+                        <i class="fa-solid fa-sliders"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">System Prompt Engineering</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Implemented dynamic dictionary lookups to inject specialized system prompts, altering bot tone, behavior, and domain expertise on the fly.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-darkbg border-t border-gray-800 py-12 text-center text-gray-500 text-sm">
+        <div class="max-w-7xl mx-auto px-4">
+            <p class="mb-2">AI Chatbot Evolution Portfolio • Built for Recruiter & Hiring Manager Evaluation</p>
+            <p class="text-xs text-gray-600">Ready to contribute to innovative AI & Python development teams.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Interactivity -->
+    <script>
+        // Tab Switcher for Evolution Stages
+        function switchTab(stageNum) {
+            for (let i = 1; i <= 4; i++) {
+                const content = document.getElementById(`tab-content-${i}`);
+                const btn = document.getElementById(`tab-btn-${i}`);
+                if (i === stageNum) {
+                    content.classList.remove('hidden');
+                    btn.className = "px-5 py-3 rounded-xl font-semibold text-sm transition bg-indigo-600 text-white shadow-lg shadow-indigo-600/30 flex items-center space-x-2";
+                } else {
+                    content.classList.add('hidden');
+                    btn.className = "px-5 py-3 rounded-xl font-semibold text-sm transition bg-cardbg text-gray-400 hover:bg-gray-800 hover:text-white border border-gray-800 flex items-center space-x-2";
+                }
+            }
+        }
+
+        // Copy Code Function
+        function copyCode(elementId) {
+            const preElement = document.getElementById(elementId);
+            const textToCopy = preElement.innerText;
+            document.execCommand('copy');
+            
+            // Temporary visual feedback
+            const btn = event.currentTarget;
+            const originalHTML = btn.innerHTML;
+            btn.innerHTML = '<i class="fa-solid fa-check text-emerald-400"></i> <span class="text-emerald-400">Copied!</span>';
+            setTimeout(() => {
+                btn.innerHTML = originalHTML;
+            }, 2000);
+        }
+
+        // Simulator Persona Data
+        const personas = {
+            teacher: {
+                title: "School Teacher",
+                desc: "Explains concepts simply with real-life examples.",
+                icon: "fa-graduation-cap",
+                greeting: "Hello! I am your School Teacher assistant. Ask me any question, and I'll explain it using simple language and everyday examples!"
+            },
+            python: {
+                title: "Python Expert",
+                desc: "Explains programming concepts clearly and provides Python code examples.",
+                icon: "fa-code",
+                greeting: "Hi there! I'm your Senior Python Developer expert. Ask me about coding, data structures, or scripts!"
+            },
+            travel: {
+                title: "Travel Guide",
+                desc: "Recommends places, food, transportation and travel tips.",
+                icon: "fa-plane-departure",
+                greeting: "Welcome! Pack your bags. Where in the world would you like to explore today?"
+            },
+            coach: {
+                title: "Motivational Coach",
+                desc: "Encourages the user and gives practical advice with a positive attitude.",
+                icon: "fa-dumbbell",
+                greeting: "Hey! You've got this! What goal are we crushing today? Let's stay focused and motivated."
+            },
+            interviewer: {
+                title: "Professional Interviewer",
+                desc: "Asks one interview question at a time and provides feedback.",
+                icon: "fa-user-tie",
+                greeting: "Welcome to your interview simulation. Let's begin: Tell me about yourself and your background in tech."
+            }
+        };
+
+        let currentPersonaKey = 'teacher';
+
+        function changePersona(key) {
+            currentPersonaKey = key;
+            const p = personas[key];
+            document.getElementById('active-persona-title').innerText = p.title;
+            document.getElementById('active-persona-desc').innerText = p.desc;
+            document.getElementById('persona-icon').innerHTML = `<i class="fa-solid ${p.icon}"></i>`;
+            
+            // Reset chat messages with new greeting
+            const chatBox = document.getElementById('chat-messages');
+            chatBox.innerHTML = `
+                <div class="flex items-start space-x-3">
+                    <div class="w-8 h-8 rounded-full bg-indigo-600/20 text-indigo-400 flex items-center justify-center text-xs font-bold shrink-0">AI</div>
+                    <div class="bg-gray-800/80 border border-gray-700/60 rounded-2xl p-4 text-sm text-gray-200 max-w-[80%] leading-relaxed">
+                        ${p.greeting}
+                    </div>
+                </div>
+            `;
+        }
+
+        // Simulator Chat Logic
+        function handleUserSubmit(event) {
+            event.preventDefault();
+            const inputField = document.getElementById('user-input-box');
+            const userText = inputField.value.trim();
+            if (!userText) return;
+
+            const chatBox = document.getElementById('chat-messages');
+
+            // Append User Bubble
+            chatBox.innerHTML += `
+                <div class="flex items-start justify-end space-x-3">
+                    <div class="bg-indigo-600 text-white rounded-2xl p-4 text-sm max-w-[80%] leading-relaxed shadow-md">
+                        ${escapeHTML(userText)}
+                    </div>
+                    <div class="w-8 h-8 rounded-full bg-gray-700 text-gray-300 flex items-center justify-center text-xs font-bold shrink-0">You</div>
+                </div>
+            `;
+            inputField.value = '';
+            chatBox.scrollTop = chatBox.scrollHeight;
+
+            // Simulate AI Response based on Persona
+            setTimeout(() => {
+                let aiReply = getSimulatedResponse(currentPersonaKey, userText);
+                chatBox.innerHTML += `
+                    <div class="flex items-start space-x-3">
+                        <div class="w-8 h-8 rounded-full bg-indigo-600/20 text-indigo-400 flex items-center justify-center text-xs font-bold shrink-0">AI</div>
+                        <div class="bg-gray-800/80 border border-gray-700/60 rounded-2xl p-4 text-sm text-gray-200 max-w-[80%] leading-relaxed">
+                            ${aiReply}
+                        </div>
+                    </div>
+                `;
+                chatBox.scrollTop = chatBox.scrollHeight;
+            }, 600);
+        }
+
+        function getSimulatedResponse(persona, query) {
+            query = query.toLowerCase();
+            if (persona === 'teacher') {
+                return `That's a wonderful question! Think of it like building with Lego blocks. Every little concept stacks together to form a bigger picture. Let me know if you want another example!`;
+            } else if (persona === 'python') {
+                return `Great coding question! In Python, you can handle this efficiently using functions or list comprehensions. For example:<br><code class="text-indigo-400 bg-gray-900 px-1.5 py-0.5 rounded">result = [x * 2 for x in range(5)]</code><br>Clean and Pythonic!`;
+            } else if (persona === 'travel') {
+                return `Oh, what an exciting destination! I recommend trying the local street food, taking public transit to beat the traffic, and booking your museum tickets a week in advance. Safe travels!`;
+            } else if (persona === 'coach') {
+                return `You're asking the right questions! Keep that momentum going. Remember, consistency beats intensity every single day. Go crush it!`;
+            } else if (persona === 'interviewer') {
+                return `That's a solid response. Now, can you give me a specific technical challenge you faced while implementing your Python environment, and how you resolved it?`;
+            }
+            return `That's fascinating! Tell me more about how you'd approach solving that.`;
+        }
+
+        function escapeHTML(str) {
+            return str.replace(/[&<>'"]/g, 
+                tag => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', "'": '&#39;', '"': '&quot;'}[tag] || tag)
+            );
+        }
+    </script>
+</body>
+</html>
